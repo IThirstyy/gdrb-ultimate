@@ -43,6 +43,8 @@
 #include net_delegator.dta
 #include store/store.dta
 #include overshell.dta
+#include ulti_macros.dta
+#include ulti_screens.dta
 #ifdef HX_WII
 #include naming_screen.dta
 #include matchmaking/invitations_wii.dta
@@ -54,6 +56,12 @@
 #include dlc_wii.dta
 #endif
 
+;instrument icons
+{set $guitaricon g}
+{set $drumicon d}
+{set $vocalsicon v}
+{set $bassicon b}
+
 ;sets default track speed. 1.15 is 115%, 1.30 is 130% and so on.
 {set $trackspeed 1.0}
 
@@ -61,8 +69,49 @@
 {set $speedmod 1.0}
 
 ;set default venue fps.
-{set $emulatefps 30}
+;{set $emulatefps 60}
+
+;set default venue fps
+{set $60fps FALSE}
+
+;no venues
+{set $blackbg FALSE}
+
+;song title always on
+{set $songtitle FALSE}
+
+;show artist text
+{set $showartist FALSE}
+
+;force show artist text for non-gd songs ONLY
+{set $forceartist TRUE}
+
+;disables the background graphics. only works on wii and does nothing if set to true by default
+{set $disablegfx FALSE}
+
+;enables track muting by default
+{set $trkmuting FALSE}
+
+;enables whammy pitch bending by default
+{set $whammypb TRUE}
 
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
+
+#ifndef HX_WII
+{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings_gd.dta" #endif} INIT_DTA_READER}
+#endif
+;modifier funcs
+{if $postfx
+   #ifdef HX_WII {pp_override} #else {rnd toggle_all_postprocs} #endif}
+{if $padtar
+   #ifdef HX_PS3
+   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerGuitar}
+   #endif
+   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerGuitar}}
+{if $paddrum
+   #ifdef HX_PS3
+   {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
+   #endif
+   {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}}
