@@ -133,7 +133,6 @@
    (num_gems_pass 0)
 )
 #endif
-
 #define TRACK_PANEL_HANDLERS
 ((enter
       {game add_sink $this}
@@ -254,4 +253,3 @@
 {set
    $playback_file
    ""}
-#endif
