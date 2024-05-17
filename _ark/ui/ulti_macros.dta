@@ -57,6 +57,16 @@
             {elem {find $entry whammypb} 1}
          }
       }
+      {if {== {elem $entry 0} {basename syncdifspeeds}}
+         {set $syncdifspeeds
+            {elem {find $entry syncdifspeeds} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename legacybass}}
+         {set $legacybass
+            {elem {find $entry legacybass} 1}
+         }
+      }
       {if {== {elem $entry 0} {basename padtar}}
          {set $padtar
             {elem {find $entry padtar} 1}

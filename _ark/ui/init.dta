@@ -95,6 +95,12 @@
 ;enables whammy pitch bending by default
 {set $whammypb TRUE}
 
+;sync dificulty speeds
+{set $syncdifspeeds FALSE}
+
+;legacy bass streak
+{set $legacybass FALSE}
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif

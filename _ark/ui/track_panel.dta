@@ -8,7 +8,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {&& {> [num_gems_combo] 39} {! $bass_groove_active}} {set $bass_groove_active TRUE} {{{{get_track_panel} find bass} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {&& {> [num_gems_combo] 39} {! $bass_groove_active}} {set $bass_groove_active TRUE} {{{{get_track_panel} find bass} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $bass_firstnote}
@@ -37,7 +37,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find bass} find streak_meter} star_deploy_stop}
       {bass stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 39} {set $bass_groove_active FALSE} {{{{get_track_panel} find bass} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 39} {set $bass_groove_active FALSE} {{{{get_track_panel} find bass} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -52,7 +52,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {&& {> [num_gems_combo] 29} {! $guitar_groove_active}} {set $guitar_groove_active TRUE} {{{{get_track_panel} find guitar} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {&& {> [num_gems_combo] 29} {! $guitar_groove_active}} {set $guitar_groove_active TRUE} {{{{get_track_panel} find guitar} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $guitar_firstnote}
@@ -81,7 +81,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find guitar} find streak_meter} star_deploy_stop}
       {guitar stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 29} {set $guitar_groove_active FALSE} {{{{get_track_panel} find guitar} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 29} {set $guitar_groove_active FALSE} {{{{get_track_panel} find guitar} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -96,7 +96,7 @@
       {$this check_fc}
       {set [num_gems_hit] {'+' [num_gems_hit] 1}}
       {set [num_gems_combo] {'+' [num_gems_combo] 1}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass}  {if {&& {> [num_gems_combo] 29} {! $drum_groove_active}} {set $drum_groove_active TRUE} {{{{get_track_panel} find drum} find BassSuperStreak_ON.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}}  {if {&& {> [num_gems_combo] 29} {! $drum_groove_active}} {set $drum_groove_active TRUE} {{{{get_track_panel} find drum} find BassSuperStreak_ON.trig} trigger}}}
 	  )
    (miss
       {unless {! $drum_firstnote}
@@ -125,7 +125,7 @@
 	  {if {> {'+' [num_gems_miss] [num_gems_pass]} 0}
       {{{{get_track_panel} find drum} find streak_meter} star_deploy_stop}
       {drum stop_deploy}}
-      {unless {modifier_mgr is_modifier_active mod_legacybass} {if {< [num_gems_combo] 29} {set $drum_groove_active FALSE} {{{{get_track_panel} find drum} find BassSuperStreak_OFF.trig} trigger}}}
+      {unless {'||' $legacybass {gamemode in_mode qp_coop_online} {gamemode in_mode story_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}} {if {< [num_gems_combo] 29} {set $drum_groove_active FALSE} {{{{get_track_panel} find drum} find BassSuperStreak_OFF.trig} trigger}}}
 	  )
    (num_gems_hit 0)
    (num_gems_combo 0)
@@ -144,7 +144,7 @@
                 (guitar {$player add_sink fc_guitar_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})
                 (drum {$player add_sink fc_drum_callback (hit miss pass check_fc check_missed num_gems_hit num_gems_combo num_gems_miss num_gems_pass)})}}}
       #endif
-      {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ 2.4 $trackspeed} $speedmod}} ;implement track speed modifier
+      {{{gamemode get track_panel} loaded_dir} set view_time_easy {* {/ {if_else $syncdifspeeds 1.2 2.4} $trackspeed} $speedmod}} ;implement track speed modifier
       {{{gamemode get track_panel} loaded_dir} set view_time_expert {* {/ 1.2 $trackspeed} $speedmod}}
       {$this
          set_showing
