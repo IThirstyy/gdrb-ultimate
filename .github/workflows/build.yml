@@ -49,7 +49,7 @@ jobs:
           find . -name "*.*_wii" -type f -delete
       - name: Build ARK
         run: |
-          dependencies/arkhelper dir2ark ./_ark ./_build/ps3/gen -n "patch_ps3" -e -v 5 -s 4073741823
+          dependencies/arkhelper dir2ark ./_ark ./_build/ps3/USRDIR/gen -n "patch_ps3" -e -v 5 -s 4073741823
       - name: Remove Excess files
         run: |
           find . -name "*.txt" -type f -delete
