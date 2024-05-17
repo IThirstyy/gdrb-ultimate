@@ -58,6 +58,14 @@
    "Pad is Drums: ON")
 (os_paddrum0
    "Pad is Drums: OFF")
+(os_legacybass1
+   "Legacy Bass Streak: ON")
+(os_legacybass0
+   "Legacy Bass Streak: OFF")
+(os_syncdifspeeds1
+   "Sync Dificulty Speeds: ON")
+(os_syncdifspeeds0
+   "Sync Dificulty Speeds: OFF")
 (os_disablegfx1
    "Pause Background Graphics: ON")
 (os_disablegfx0
