@@ -227,6 +227,14 @@
          reset}
       {$this configure_optimizations})
    (on_extend
+      #ifndef HX_XBOX
+      {unless {'||' {gamemode in_mode h2h_score_duel_local} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_tug_of_war_local} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked} {gamemode in_mode h2h_score_duel_ranked}}
+         {beatmatch foreach_active_player $player ;handle adding the appropriate callbacks to each player
+             {switch {$player instrument}
+                (bass {{{{get_track_panel} find guitar} find streak_meter} star_deploy})
+                (guitar {{{{get_track_panel} find guitar} find streak_meter} star_deploy})
+                (drum {{{{get_track_panel} find guitar} find streak_meter} star_deploy})}}}
+      #endif
       {$this play_intro}
       {if
          {&&
