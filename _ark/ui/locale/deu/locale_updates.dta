@@ -62,6 +62,30 @@
    "Pause Background Graphics: ON")
 (os_disablegfx0
    "Pause Background Graphics: OFF")
+(os_forcewhv0
+   "Force Warehouse Venue: OFF")
+(os_forcewhv1
+   "Force Warehouse Venue: ON")
+(os_forcemkv0
+   "Force Milton Keynes Venue: OFF")
+(os_forcemkv1
+   "Force Milton Keynes Venue: ON")
+(os_forceftv0
+   "Force Fox Theatre Venue: OFF")
+(os_forceftv1
+   "Force Fox Theatre Venue: ON")
+(os_forcedko0
+   "Force Dookie Outfit: OFF")
+(os_forcedko1
+   "Force Dookie Outfit: ON")
+(os_forceaio0
+   "Force Amercian Idiot Outfit: OFF")
+(os_forceaio1
+   "Force Amercian Idiot Outfit: ON")
+(os_force21sto0
+   "Force 21st Outfit: OFF")
+(os_force21sto1
+   "Force 21st Outfit: ON")
 (os_60fps0
    "Venue FPS: 30")
 (os_60fps1
@@ -120,19 +144,19 @@
    "Theatre mode info")
 #ifdef HX_XBOX
 (mod_info
-   "Green Day Rock Band Ultimate Version 1.1 by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress back twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
+   "Green Day Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress back twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
    "Press LB to go 10 seconds backward\nPress RB to go 10 seconds forward\nPress X to cycle freecam\nPress Y to pause the song")
 #endif
 #ifdef HX_PS3
 (mod_info
-   "Green Day Rock Band Ultimate Version 1.1 by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress select twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
+   "Green Day Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress select twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
    "Press L1 to go 10 seconds backward\nPress R1 to go 10 seconds forward\nPress Square to cycle freecam\nPress Triangle to pause the song")
 #endif
 #ifdef HX_WII
 (mod_info
-   "Green Day Rock Band Ultimate Version 1.1 by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress - twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
+   "Green Day Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress - twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
 (theatre_info
    "Press left to go 10 seconds backward\nPress right to go 10 seconds forward\nPress 1 to cycle freecam\nPress 2 to pause the song")
 #endif

@@ -115,3 +115,21 @@
    {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
    #endif
    {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}}
+{if $forcewhv
+   {set $forcevenue TRUE}
+   {set $forcedvenue dookie}}
+{if $forcemkv
+   {set $forcevenue TRUE}
+   {set $forcedvenue americanidiot}}
+{if $forceftv
+   {set $forcevenue TRUE}
+   {set $forcedvenue twentyfirst}}
+{if $forcedko
+   {set $forceoutfit TRUE}
+   {set $forcedoutfit dookie}}
+{if $forceaio
+   {set $forceoutfit TRUE}
+   {set $forcedoutfit americanidiot}}
+{if $force21sto
+   {set $forceoutfit TRUE}
+   {set $forcedoutfit 21st}}

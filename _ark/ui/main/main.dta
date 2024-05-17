@@ -10,9 +10,9 @@
             (song_speed
                (song_speed $speedmod)
             )
-            ;(emulate_fps
-            ;   (emulate_fps $emulatefps)
-            ;)
+            (emulate_fps
+               (emulate_fps $emulatefps)
+            )
             (60fps
                (60fps $60fps)
             )
@@ -39,6 +39,24 @@
             )
             (paddrum
                (paddrum $paddrum)
+            )
+            (forcewhv
+               (forcewhv $forcewhv)
+            )
+            (forcemkv
+               (forcemkv $forcemkv)
+            )
+            (forceftv
+               (forceftv $forceftv)
+            )
+            (forcedko
+               (forcedko $forcedko)
+            )
+            (forceaio
+               (forceaio $forceaio)
+            )
+            (force21sto
+               (force21sto $force21sto)
             )
             (guitaricon
                (guitaricon $guitaricon)
