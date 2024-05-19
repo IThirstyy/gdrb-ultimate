@@ -46,6 +46,9 @@
       {$this iterate UILabel $l {$l set_showing FALSE}} ;huh
       {logo_greenday.tex set_bitmap "ui/splash/logo_greenday.png"}
       {logo_greenday.mesh set_local_pos_index 2 100}
+      #ifdef HX_PS3
+      {register_trophy}
+      #endif
       {set
          [attract_timeout_done]
          FALSE}
