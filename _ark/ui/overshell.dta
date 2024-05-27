@@ -218,8 +218,6 @@
    {if_else $blackbg os_blackbg1 os_blackbg0}
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
-   #else
-   {if_else $60fps os_60fps1 os_60fps0}
    #endif
    {if_else $forcewhv os_forcewhv1 os_forcewhv0}
    {if_else $forcemkv os_forcemkv1 os_forcemkv0}
@@ -370,16 +368,6 @@
             #else
             {rnd toggle_all_postprocs}
             #endif
-         )
-         (os_60fps1
-            {set $60fps {! $60fps}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_60fps0
-            {set $60fps {! $60fps}}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
          )
       }
    )
@@ -800,14 +788,20 @@
       {sfx.sld set_num_steps 60} ;number of steps for venue fps slider
      {background.sld set_current {int {+ 0.5 {/ {+ {- $trackspeed 1} 0.5} 0.05}}}} ;set note speed slider based on current value
       {crowd.sld set_current {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}} ;set song speed slider based on current value
-      ;{sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+     #ifdef HX_WII
       {$this disable sfx.sld}
       {sfx.sld set_showing FALSE}
+     #else
+      {sfx.sld set_current {int {- $emulatefps 1}}} ;set FPS slider based on current value
+     #endif
      {background_music.btn set text_token {sprintf {localize trackspeed_msg} {int {+ 0.5 {* $trackspeed 100}}}}} ;set note speed msg
      {crowd.btn set text_token {sprintf {localize speed_msg} {int {+ 0.5 {* $speedmod 100}}}}} ;set song speed msg
+     #ifdef HX_WII
      {sfx.btn set_showing FALSE}
      {$this disable sfx.btn}
-     ;{sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+     #else
+     {sfx.btn set text_token {sprintf {localize fps_msg} {int $emulatefps}}}  ;set venue fps msg
+     #endif
       {audio_options.lbl set text_token milosliderlbl}
       {karaoke.btn set_showing FALSE}
       {$this disable karaoke.btn}

@@ -296,9 +296,20 @@
          FALSE})
    PAUSE_ON_MIC_DISCONNECT
    (enter
-      {if_else $60fps
-         {$world iterate PostProc $p {$p set emulate_fps 60}}
-         {$world iterate PostProc $p {$p set emulate_fps 30}}}
+	  #ifndef HX_XBOX
+	  ;set up the FC indicator here again and again
+	  {set $guitar_milosong FALSE} {set $bass_milosong FALSE} {set $drum_milosong FALSE}
+	  {set $bass_firstnote FALSE} {set $guitar_firstnote FALSE} {set $drum_firstnote FALSE}
+	  {set $drum_groove_active FALSE} {set $guitar_groove_active FALSE} {set $bass_groove_active FALSE}
+	  #endif
+	  #ifndef HX_WII
+	  ;setup for venue fps
+	  {if {!= $emulatefps 30} {{$world iterate PostProc $p {$p set emulate_fps $emulatefps}}}
+	  {if {>= {$emulatefps 31} {$char iterate CharHair $hair {$hair reset 35}}
+	  {$world iterate WorldDir $wd {$wd iterate BandCamShot $bcs
+	  {foreach $property (shake_noisefreq shake_noiseamp) {$bcs set (keyframes $i $property) {'*' {$bcs get (keyframes $i $property)} 0.25}}}
+	  {foreach $component (x y) {$bcs set (keyframes $i shake_maxangle $component) {'*' {$bcs get (keyframes $i shake_maxangle $component)} 0.25}}}}}}}}
+	  #endif
       {if {gamemode in_mode autoplay_mode} {do {beatmatch foreach_active_player $player {$player set_auto_play enable}}}}
       {$this set_showing TRUE}
       {set

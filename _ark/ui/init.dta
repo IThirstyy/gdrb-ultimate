@@ -69,10 +69,7 @@
 {set $speedmod 1.0}
 
 ;set default venue fps.
-;{set $emulatefps 60}
-
-;set default venue fps
-{set $60fps FALSE}
+{set $emulatefps 30}
 
 ;no venues
 {set $blackbg FALSE}

@@ -13,9 +13,6 @@
             (emulate_fps
                (emulate_fps $emulatefps)
             )
-            (60fps
-               (60fps $60fps)
-            )
             (black_bg
                (black_bg $blackbg)
             )
