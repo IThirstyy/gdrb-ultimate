@@ -7,7 +7,7 @@
          #ifdef HX_XBOX
          (ranked_match_scoreduel easy medium hard expert)
          #endif)
-      (custom_modes theatre theatre_info_button)
+      (custom_modes theatre_info_button theatre autoplay)
       mod_info_button)
    (story story_local story_online)
    ((training popup)

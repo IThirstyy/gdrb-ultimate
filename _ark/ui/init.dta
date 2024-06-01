@@ -98,6 +98,76 @@
 ;legacy bass streak
 {set $legacybass FALSE}
 
+;default gem/smasher/sustain colors
+{set $gtrgem1 gem_red.wid}
+{set $gtrhgem1 gem_red_hopo.wid}
+{set $gtrgem2 gem_orange.wid}
+{set $gtrhgem2 gem_orange_hopo.wid}
+{set $gtrgem3 gem_yellow.wid}
+{set $gtrhgem3 gem_yellow_hopo.wid}
+{set $gtrgem4 gem_green.wid}
+{set $gtrhgem4 gem_green_hopo.wid}
+{set $gtrgem5 gem_blue.wid}
+{set $gtrhgem5 gem_blue_hopo.wid}
+{set $drmgem1 gem_kick.wid}
+{set $drmgem2 drum_red.wid}
+{set $drmgem3 drum_yellow.wid}
+{set $drmgem4 drum_blue.wid}
+{set $drmgem5 drum_green.wid}
+{set $gtrsm1 red}
+{set $gtrsm2 orange}
+{set $gtrsm3 yellow}
+{set $gtrsm4 green}
+{set $gtrsm5 blue}
+{set $gtrsus1 red}
+{set $gtrsus2 orange}
+{set $gtrsus3 yellow}
+{set $gtrsus4 green}
+{set $gtrsus5 blue}
+{set $drms1 red}
+{set $drms2 yellow}
+{set $drms3 blue}
+{set $drms4 green}
+
+
+;gem texture
+{set $gem "none"}
+
+;smasher texture
+{set $smasher "none"}
+
+;streak texture
+{set $streak "none"}
+
+;overdrive texture
+{set $spotlight "none"}
+
+;multiplier ring texture
+{set $multiring "none"}
+
+;overdrive bar texture
+{set $odbar "none"}
+
+;score texture
+{set $scoretex "none"}
+
+;custom track scaling/angles/rotation
+;highly experimental, don't edit unless you know what you're doing
+{set $trackangle FALSE}
+
+;track angle presets that closely match the source games
+;available options: "gdrb", "rb2", "rb4", "rr" "none"
+{set $anglepreset "gdrb"}
+;set to "none" if you want to manually edit the numbers below
+
+;the default angles set here is rb2's
+{set $track_pitch -44.5} ;camera pitch
+{set $track_fov 21.0515995025635} ;field of view of the track camera
+{set $track_y_pos -83.5} ;y position of the camera (in/out)
+{set $track_z_pos 18.5} ;z position of the camera (up/down)
+{set $track_fade_start 60} ;start point of the fadeout at the end of the track
+{set $track_fade_length 40} ;length of the fadeout at the end of the track
+
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
@@ -118,6 +188,48 @@
    {set_elem {find $syscfg joypad instrument_mapping dualshock} 1 kControllerDrum}
    #endif
    {set_elem {find $syscfg joypad instrument_mapping analog} 1 kControllerDrum}}
+
+{unless {== $gem none} {set $gemcustomtexture TRUE}}
+
+{unless {== $smasher none} {set $smashercustomtexture TRUE}}
+
+{unless {== $spotlight none} {set $spotlightcustomtexture TRUE}}
+
+{unless {== $streak none} {set $streakcustomtexture TRUE}}
+
+{unless {== $multiring none} {set $multiringcustomtexture TRUE}}
+
+{unless {== $odbar none} {set $odbarcustomtexture TRUE}}
+
+{unless {== $scoretex none} {set $scorecustomtexture TRUE}}
+
+{if {== $anglepreset gdrb}
+   {set $trackangle FALSE}}
+{if {== $anglepreset rb2}
+      {set $trackangle TRUE}
+      {set $track_pitch -44.5}
+      {set $track_fov 21.0515995025635}
+      {set $track_y_pos -83.5}
+      {set $track_z_pos 18.5}
+      {set $track_fade_start 60}
+      {set $track_fade_length 40}}
+{if {== $anglepreset rb4}
+      {set $trackangle TRUE}
+      {set $track_pitch -40.5}
+      {set $track_fov 21}
+      {set $track_y_pos -112.5}
+      {set $track_z_pos 26.51}
+      {set $track_fade_start 90}
+      {set $track_fade_length 30}}
+{if {== $anglepreset rr}
+      {set $trackangle TRUE}
+      {set $track_pitch -90}
+      {set $track_fov 19}
+      {set $track_y_pos -165}
+      {set $track_z_pos 36}
+      {set $track_fade_start 15}
+      {set $track_fade_length 45}}
+
 {if $forcewhv
    {set $forcevenue TRUE}
    {set $forcedvenue dookie}}
