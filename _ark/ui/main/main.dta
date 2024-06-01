@@ -1115,7 +1115,7 @@
                kDataArray}
             {elem $first 0}
             $first}}))
-#ifndef _SHIP
+;#ifndef _SHIP
 {new
    UIPanel
    version_panel
@@ -1128,27 +1128,20 @@
    (enter
       {if
          {exists version_info.lbl}
-         {if_else
-            {>= VERSION_BUILD_NUM 0}
-            {version_info.lbl
-               set_token_fmt
-               (build_changelist
-                  {int VERSION_BUILD_NUM}
-                  {int VERSION_CHANGELIST})}
-            {version_info.lbl set_token_fmt build_local}}}
+            {version_info.lbl set_token_fmt gdrbu_build_string}}
       {enter.trg trigger})
    (exit
       {exit.trg trigger})}
-#endif
+;#endif
 {new
    AutoloadScreen
    main_screen
    COMMON_MAIN_SCREEN
-   #ifndef _SHIP
+   ;#ifndef _SHIP
    (panels meta background_panel main_panel version_panel)
-   #else
-   (panels meta background_panel main_panel)
-   #endif
+   ;#else
+   ;(panels meta background_panel main_panel)
+   ;#endif
    (background_view main_1)
    (next main_screen_2)
    (back splash_screen)

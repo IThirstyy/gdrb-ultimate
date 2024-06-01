@@ -280,6 +280,7 @@
 (tbrb_drums "TBRB Drums")
 (tbrb_guitar "TBRB Guitar")
 (rr "Rock Revolution")
+(gdrbu_build_string "GDRB Ultimate 2.0 BETA DEVBUILD")
 #ifdef HX_XBOX
 (mod_info
    "Green Day Rock Band Ultimate Version 2.0 BETA by Big L 2112\n\nCredit to Milohax for creating GDRB Deluxe as this project is based off it\n\nPress back twice to open the overshell for track speeds and other stuff\n\n\nJoin the ultimate mods discord\ndiscord.gg/ht7XUfBXdB")
