@@ -20,11 +20,11 @@ jobs:
 
     - name: Replace DEVBUILD with commit SHA in all locales
       run: |
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
       env:
         COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove PS3 and Wii files
@@ -62,11 +62,11 @@ jobs:
 
     - name: Replace DEVBUILD with commit SHA in all locales
       run: |
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
       env:
         COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove Xbox and Wii files
@@ -104,11 +104,11 @@ jobs:
 
     - name: Replace DEVBUILD with commit SHA in all locales
       run: |
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
-        sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
+          sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
       env:
         COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove Xbox and PS3 files
