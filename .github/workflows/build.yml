@@ -15,18 +15,18 @@ jobs:
           chmod +x dependencies/arkhelper
           chmod +x dependencies/dtab
       - name: Get current commit SHA
-      id: get_commit
-      run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        id: get_commit
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-    - name: Replace DEVBUILD with commit SHA in all locales
-      run: |
+      - name: Replace DEVBUILD with commit SHA in all locales
+        run: |
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
-      env:
-        COMMIT_SHA: ${{ env.COMMIT_SHA }}
+        env:
+          COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove PS3 and Wii files
         run: |
           find . -name "*.*_ps3" -type f -delete
@@ -57,18 +57,18 @@ jobs:
           chmod +x dependencies/arkhelper
           chmod +x dependencies/dtab
       - name: Get current commit SHA
-      id: get_commit
-      run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        id: get_commit
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-    - name: Replace DEVBUILD with commit SHA in all locales
-      run: |
+      - name: Replace DEVBUILD with commit SHA in all locales
+        run: |
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
-      env:
-        COMMIT_SHA: ${{ env.COMMIT_SHA }}
+        env:
+          COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove Xbox and Wii files
         run: |
           find . -name "*.*_xbox" -type f -delete
@@ -99,18 +99,18 @@ jobs:
           chmod +x dependencies/arkhelper
           chmod +x dependencies/dtab
       - name: Get current commit SHA
-      id: get_commit
-      run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        id: get_commit
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-    - name: Replace DEVBUILD with commit SHA in all locales
-      run: |
+      - name: Replace DEVBUILD with commit SHA in all locales
+        run: |
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/eng/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/deu/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/esl/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/fre/locale_updates.dta
           sed -i 's/DEVBUILD/${{ env.COMMIT_SHA }}/g' _ark/ui/locale/ita/locale_updates.dta
-      env:
-        COMMIT_SHA: ${{ env.COMMIT_SHA }}
+        env:
+          COMMIT_SHA: ${{ env.COMMIT_SHA }}
       - name: Remove Xbox and PS3 files
         run: |
           find . -name "*.*_xbox" -type f -delete
