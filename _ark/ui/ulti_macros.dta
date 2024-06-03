@@ -1,7 +1,7 @@
 #ifndef HX_WII
 #define INIT_DTA_READER
 (
-   {foreach $entry {read_file #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings_gd.dta" #endif}
+   {foreach $entry {read_file #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30050/USRDIR/ulti_settings_gd.dta" #endif}
       {if {== {elem $entry 0} {basename track_speed}}
          {set $trackspeed
             {elem {find $entry track_speed} 1}

@@ -173,7 +173,7 @@
 #endif
 
 #ifndef HX_WII
-{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30282/USRDIR/ulti_settings_gd.dta" #endif} INIT_DTA_READER}
+{if {file_exists #ifdef HX_XBOX "GAME:/ulti_settings.dta" #endif #ifdef HX_PS3 "GD:/dev_hdd0/game/BLUS30050/USRDIR/ulti_settings_gd.dta" #endif} INIT_DTA_READER}
 #endif
 ;modifier funcs
 {if $postfx
