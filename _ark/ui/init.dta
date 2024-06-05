@@ -98,6 +98,13 @@
 ;legacy bass streak
 {set $legacybass FALSE}
 
+;skip intro by default
+{set $skipintro TRUE}
+
+;dont skip splash by default
+{set $skipsplash FALSE}
+
+
 ;default gem/smasher/sustain colors
 {set $gtrgem1 gem_red.wid}
 {set $gtrhgem1 gem_red_hopo.wid}

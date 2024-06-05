@@ -47,7 +47,7 @@
    #ifndef _SHIP
    {ui add_message_type session_mgr add_local_user_result_msg}
    #endif
-   {set $first_screen splash_screen}
+   {set $first_screen intro_movie_screen}
    {ui my_init}
    {ui goto_screen $first_screen})
 #include band_ui.dta

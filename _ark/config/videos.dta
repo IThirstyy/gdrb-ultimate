@@ -1,0 +1,154 @@
+(stream_begin)
+(stream_end)
+#ifdef HX_WII
+#define kWidescreen16x9
+(1.7777778)
+#define kStandard4x3
+(1.3333334)
+(intro_movie
+   (files
+      ("videos/intro_cinematic.bik"
+         kWidescreen16x9))
+   (fill_width TRUE))
+(outro
+   (files
+      ("videos/prize_15.bik"
+         kWidescreen16x9))
+   (fill_width TRUE))
+(attract
+   (files
+      #include attractvideos.dta)
+   (fill_width TRUE))
+(win_credits
+   (files
+      ("videos/end_credits.bik"
+         kStandard4x3)))
+(prize1_video
+   (files
+      ("videos/prize_1.bik"
+         kStandard4x3)))
+(prize2_video
+   (files
+      ("videos/prize_2.bik"
+         kStandard4x3)))
+(prize3_video
+   (files
+      ("videos/prize_3.bik"
+         kStandard4x3)))
+(prize4_video
+   (files
+      ("videos/prize_4.bik"
+         kStandard4x3)))
+(prize5_video
+   (files
+      ("videos/prize_5.bik"
+         kStandard4x3)))
+(prize6_video
+   (files
+      ("videos/prize_6.bik"
+         kStandard4x3)))
+(prize7_video
+   (files
+      ("videos/prize_7.bik"
+         kStandard4x3)))
+(prize8_video
+   (files
+      ("videos/prize_8.bik"
+         kStandard4x3)))
+(prize9_video
+   (files
+      ("videos/prize_9.bik"
+         kStandard4x3)))
+(prize10_video
+   (files
+      ("videos/prize_10.bik"
+         kStandard4x3)))
+(prize11_video
+   (files
+      ("videos/prize_11.bik"
+         kStandard4x3)))
+(prize12_video
+   (files
+      ("videos/prize_12.bik"
+         kStandard4x3)))
+(prize13_video
+   (files
+      ("videos/prize_13.bik"
+         kStandard4x3)))
+(prize14_video
+   (files
+      ("videos/prize_14.bik"
+         kStandard4x3)))
+(prize15_video
+   (files
+      ("videos/prize_15.bik"
+         kStandard4x3)))
+(fake
+   (files
+      (" "
+         kStandard4x3)))
+#else
+(intro_movie
+   (files
+      "intro_cinematic.bik")
+   (fill_width TRUE))
+(outro
+   (files
+      "prize_15.bik")
+   (fill_width TRUE))
+(attract
+   (files
+      #include attractvideos.dta)
+   (fill_width TRUE))
+(win_credits
+   (files
+      "end_credits.bik"))
+(prize1_video
+   (files
+      "prize_1.bik"))
+(prize2_video
+   (files
+      "prize_2.bik"))
+(prize3_video
+   (files
+      "prize_3.bik"))
+(prize4_video
+   (files
+      "prize_4.bik"))
+(prize5_video
+   (files
+      "prize_5.bik"))
+(prize6_video
+   (files
+      "prize_6.bik"))
+(prize7_video
+   (files
+      "prize_7.bik"))
+(prize8_video
+   (files
+      "prize_8.bik"))
+(prize9_video
+   (files
+      "prize_9.bik"))
+(prize10_video
+   (files
+      "prize_10.bik"))
+(prize11_video
+   (files
+      "prize_11.bik"))
+(prize12_video
+   (files
+      "prize_12.bik"))
+(prize13_video
+   (files
+      "prize_13.bik"))
+(prize14_video
+   (files
+      "prize_14.bik"))
+(prize15_video
+   (files
+      "prize_15.bik"))
+(fake
+   (files
+      " "))
+#endif

@@ -98,6 +98,14 @@
    "Venue FPS: 30")
 (os_60fps1
    "Venue FPS: 60")
+(os_skipintro1
+   "Skip Intro Movie: ON")
+(os_skipintro0
+   "Skip Intro Movie: OFF")
+(os_skipsplash1
+   "Skip Splash Screen: ON")
+(os_skipsplash0
+   "Skip Splash Screen: OFF")
 (pausecommand_toggle_hud
    "Disable HUD")
 (pausecommand_cycle_freecam

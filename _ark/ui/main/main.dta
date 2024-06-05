@@ -172,6 +172,12 @@
             (drms4
                (drms4 $drms4)
             )
+            (skipsplash
+               (skipsplash $skipsplash)
+            )
+            (skipintro
+               (skipintro $skipintro)
+            )
             (guitaricon
                (guitaricon $guitaricon)
             )
