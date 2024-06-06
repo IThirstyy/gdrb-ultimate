@@ -66,7 +66,7 @@
       "1964-04-16")
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 2)
-   (venue {if_else $forcevenue $forcedvenue twentyfirst}))
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue}))
 (knowyourenemy
    (name
       "Know Your Enemy")
@@ -131,7 +131,7 @@
       "2009-05-15")
    (date_recorded
       "1964-04-16")
-   (venue {if_else $forcevenue $forcedvenue twentyfirst})
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue})
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 11))
 (lastoftheamerican
@@ -203,7 +203,7 @@
       "1964-04-16")
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 11)
-   (venue {if_else $forcevenue $forcedvenue twentyfirst}))
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue}))
 (eastjesusnowhere
    (name
       "East Jesus Nowhere")
@@ -269,7 +269,7 @@
       "2009-05-15")
    (date_recorded
       "1964-04-16")
-   (venue {if_else $forcevenue $forcedvenue twentyfirst})
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue})
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 4))
 (christiansinferno
@@ -341,7 +341,7 @@
       "1964-04-16")
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 2)
-   (venue {if_else $forcevenue $forcedvenue twentyfirst}))
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue}))
 (vivalagloria
    (name
       "¡Viva la Gloria!")
@@ -411,5 +411,5 @@
       "1964-04-16")
    (guide_pitch_volume -3.0)
    (vocal_tonic_note 4)
-   (venue {if_else $forcevenue $forcedvenue twentyfirst}))
+   (venue {if_else {== $forcevenue off} twentyfirst $forcevenue}))
 #endif

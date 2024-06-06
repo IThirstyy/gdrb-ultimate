@@ -6,7 +6,7 @@
    overshell_main_panel
    OVERSHELL_LIST_FILE
    (enter
-      {sel_section.lst set_data (os_mod os_vis os_trk os_spd)}
+      {sel_section.lst set_data (os_mod os_vis os_spd os_trk)}
       {title.lbl set text_token os_dxsettings}
       {$this pause_if_local})
    (exit)
@@ -239,12 +239,6 @@
    #ifdef HX_WII
    {if_else $disablegfx os_disablegfx1 os_disablegfx0}
    #endif
-   {if_else $forcewhv os_forcewhv1 os_forcewhv0}
-   {if_else $forcemkv os_forcemkv1 os_forcemkv0}
-   {if_else $forceftv os_forceftv1 os_forceftv0}
-   {if_else $forcedko os_forcedko1 os_forcedko0}
-   {if_else $forceaio os_forceaio1 os_forceaio0}
-   {if_else $force21sto os_force21sto1 os_force21sto0}
 ))
 {new
    MultiSelectListPanel
@@ -257,96 +251,6 @@
    (exit)
    (SELECT_MSG
       {switch {$component selected_sym}
-         (os_forcewhv0
-            {set $forcewhv {! $forcewhv}}
-            {set $forcemkv FALSE}
-            {set $forceftv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue dookie}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcewhv1
-            {set $forcewhv {! $forcewhv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcemkv0
-            {set $forcemkv {! $forcemkv}}
-            {set $forcewhv FALSE}
-            {set $forceftv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue americanidiot}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcemkv1
-            {set $forcemkv {! $forcemkv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forceftv0
-            {set $forceftv {! $forceftv}}
-            {set $forcemkv FALSE}
-            {set $forcewhv FALSE}
-            {set $forcevenue TRUE}
-            {set $forcedvenue twentyfirst}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forceftv1
-            {set $forceftv {! $forceftv}}
-            {set $forcevenue FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcedko0
-            {set $forcedko {! $forcedko}}
-            {set $forceaio FALSE}
-            {set $force21sto FALSE}
-            {set $forceoutfit TRUE}
-            {set $forcedoutfit dookie}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forcedko1
-            {set $forcedko {! $forcedko}}
-            {set $forceoutfit FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forceaio0
-            {set $forceaio {! $forceaio}}
-            {set $forcedko FALSE}
-            {set $force21sto FALSE}
-            {set $forceoutfit TRUE}
-            {set $forcedoutfit americanidiot}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_forceaio1
-            {set $forceaio {! $forceaio}}
-            {set $forceoutfit FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_force21sto0
-            {set $force21sto {! $force21sto}}
-            {set $forceaio FALSE}
-            {set $forcedko FALSE}
-            {set $forceoutfit TRUE}
-            {set $forcedoutfit 21st}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
-         (os_force21sto1
-            {set $force21sto {! $force21sto}}
-            {set $forceoutfit FALSE}
-            {set $vismodifierpos {sel_section.lst selected_sym}}
-            {$this lst_reset}
-         )
          (os_blackbg1
             {set $blackbg {! $blackbg}}
             {set $vismodifierpos {sel_section.lst selected_sym}}
@@ -414,7 +318,7 @@
 
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset os_gems #endif os_gems_colors os_smashers os_smashers_colors os_score os_odbar os_multi_ring os_strk os_spotlight os_angle
+   #ifndef HX_WII os_reset os_gems #endif os_gems_colors os_smashers os_smashers_colors os_score os_odbar os_multi_ring os_strk os_spotlight os_venues os_outfits os_angle
 ))
 {new
    MultiSelectListPanel
@@ -475,6 +379,12 @@
          (os_multi_ring
             {ui push_screen overshell_multiplier_ring_screen}
          )
+         (os_venues
+            {ui push_screen overshell_venues_screen}
+         )
+         (os_outfits
+            {ui push_screen overshell_outfits_screen}
+         )
          (os_angle
             {ui push_screen overshell_angle_screen}
          )
@@ -503,6 +413,80 @@
 ;
 
 ; take this "code" as an example as why you should leave this to the pros not like me
+
+;
+#define GDRB_VENUES_MODIFIER_DATA
+((off dookie americanidiot twentyfirst))
+{new
+    MultiSelectListPanel
+    overshell_venues_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRB_VENUES_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_venues}})
+    (exit)
+    (SELECT_MSG
+      {set $forcevenue {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_venues_screen
+   (panels overshell_venues_panel)
+   (focus overshell_venues_panel)}
+;
+
+;
+#define GDRB_OUTFITS_MODIFIER_DATA
+((off dookie americanidiot 21st hidden))
+{new
+    MultiSelectListPanel
+    overshell_outfits_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRB_OUTFITS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $forceoutfit {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_outfits_screen
+   (panels overshell_outfits_panel)
+   (focus overshell_outfits_panel)}
+;
 
 #define GEMC_MODIFIER_DATA ; dta make me cry why is dta dta
 ((

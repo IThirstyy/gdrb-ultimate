@@ -72,34 +72,14 @@
             {elem {find $entry paddrum} 1}
          }
       }
-      {if {== {elem $entry 0} {basename forcewhv}}
-         {set $forcewhv
-            {elem {find $entry forcewhv} 1}
+      {if {== {elem $entry 0} {basename forceoutfit}}
+         {set $forceoutfit
+            {elem {find $entry forceoutfit} 1}
          }
       }
-      {if {== {elem $entry 0} {basename forcemkv}}
-         {set $forcemkv
-            {elem {find $entry forcemkv} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forceftv}}
-         {set $forceftv
-            {elem {find $entry forceftv} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forcedko}}
-         {set $forcedko
-            {elem {find $entry forcedko} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename forceaio}}
-         {set $forceaio
-            {elem {find $entry forceaio} 1}
-         }
-      }
-      {if {== {elem $entry 0} {basename force21sto}}
-         {set $force21sto
-            {elem {find $entry force21sto} 1}
+      {if {== {elem $entry 0} {basename forcevenue}}
+         {set $forcevenue
+            {elem {find $entry forcevenue} 1}
          }
       }
       {if {== {elem $entry 0} {basename gem_texture}}

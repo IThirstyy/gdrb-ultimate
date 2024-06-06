@@ -104,6 +104,11 @@
 ;dont skip splash by default
 {set $skipsplash FALSE}
 
+;dont force outfit by default
+{set $forceoutfit "off"}
+
+;dont force venue by default
+{set $forcevenue "off"}
 
 ;default gem/smasher/sustain colors
 {set $gtrgem1 gem_red.wid}
@@ -236,22 +241,3 @@
       {set $track_z_pos 36}
       {set $track_fade_start 15}
       {set $track_fade_length 45}}
-
-{if $forcewhv
-   {set $forcevenue TRUE}
-   {set $forcedvenue dookie}}
-{if $forcemkv
-   {set $forcevenue TRUE}
-   {set $forcedvenue americanidiot}}
-{if $forceftv
-   {set $forcevenue TRUE}
-   {set $forcedvenue twentyfirst}}
-{if $forcedko
-   {set $forceoutfit TRUE}
-   {set $forcedoutfit dookie}}
-{if $forceaio
-   {set $forceoutfit TRUE}
-   {set $forcedoutfit americanidiot}}
-{if $force21sto
-   {set $forceoutfit TRUE}
-   {set $forcedoutfit 21st}}

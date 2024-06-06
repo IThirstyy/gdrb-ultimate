@@ -240,17 +240,17 @@
             ((historical dreamscape)
                {sprint
                   "../outfit/"
-                  {if_else $forceoutfit $forcedoutfit $outfit}
+                  {if_else {== $forceoutfit off} $outfit $forceoutfit}
                   ".milo"})
             ((stick_left stick_right)
                {sprint
                   "../../rigging/drum/"
-                  {if_else $forceoutfit $forcedoutfit $outfit}
+                  $outfit
                   ".milo"})
             ((body_guitar body_drum)
                {sprint
                   "../body/"
-                  {if_else $forceoutfit $forcedoutfit $outfit}
+                  $outfit
                   ".milo"})
             kDataUnhandled}))
    (crowd_anim

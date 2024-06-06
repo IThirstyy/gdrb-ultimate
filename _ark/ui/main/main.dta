@@ -43,23 +43,11 @@
             (paddrum
                (paddrum $paddrum)
             )
-            (forcewhv
-               (forcewhv $forcewhv)
+            (forceoutfit
+               (forceoutfit $forceoutfit)
             )
-            (forcemkv
-               (forcemkv $forcemkv)
-            )
-            (forceftv
-               (forceftv $forceftv)
-            )
-            (forcedko
-               (forcedko $forcedko)
-            )
-            (forceaio
-               (forceaio $forceaio)
-            )
-            (force21sto
-               (force21sto $force21sto)
+            (forcevenue
+               (forcevenue $forcevenue)
             )
             (gem_texture
                (gem_texture $gem)

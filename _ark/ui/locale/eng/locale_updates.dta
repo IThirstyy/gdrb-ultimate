@@ -157,7 +157,7 @@
 (mod_info_button
    "Mod info")
 (os_trk 
-   "Track Options")
+   "Appearance")
 (os_reset
    "Reset Appearance")
 (restart_info
@@ -262,6 +262,10 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
+(21st
+   "The Fox Theatre - Oakland")
+(os_venues "Force Venue")
+(os_outfits "Force Outfits")
 ;track settings
 (rb1 "Rock Band 1")
 (rb2 "Rock Band 2")
