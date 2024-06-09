@@ -318,7 +318,7 @@
 
 #define TRK_MODIFIER_DATA
 ((
-   #ifndef HX_WII os_reset os_gems #endif os_gems_colors os_smashers os_smashers_colors os_score os_odbar os_multi_ring os_strk os_spotlight os_venues os_outfits os_angle
+   #ifndef HX_WII os_reset os_gems #endif os_gems_colors os_smashers os_smashers_colors os_score os_odbar os_multi_ring os_strk os_spotlight os_venues os_outfits os_instrument_icon os_angle
 ))
 {new
    MultiSelectListPanel
@@ -385,6 +385,9 @@
          (os_outfits
             {ui push_screen overshell_outfits_screen}
          )
+         (os_instrument_icon
+            {ui push_screen overshell_instrument_icon_screen}
+         )
          (os_angle
             {ui push_screen overshell_angle_screen}
          )
@@ -413,6 +416,251 @@
 ;
 
 ; take this "code" as an example as why you should leave this to the pros not like me
+
+;
+
+#define INSTICON_MODIFIER_DATA ; dta make me cry why is dta dta
+((
+   os_guitar_icon os_drums_icon os_vocals_icon os_bass_icon
+))
+{new
+   MultiSelectListPanel
+   overshell_instrument_icon_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_instrument_icon}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_guitar_icon
+            {ui push_screen overshell_guitar_icon_screen}
+         )
+         (os_drums_icon
+            {ui push_screen overshell_drums_icon_screen}
+         )
+         (os_vocals_icon
+            {ui push_screen overshell_vocals_icon_screen}
+         )
+         (os_bass_icon
+            {ui push_screen overshell_bass_icon_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data INSTICON_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_instrument_icon_screen
+   (panels overshell_instrument_icon_panel)
+   (focus overshell_instrument_icon_panel)}
+;
+#define INSTICON_LEAVE
+(
+   {ui goto_screen overshell_gtr_gem_color_screen}
+   {ui pop_screen}
+)
+#define ICON_MODIFIER_DATA
+((
+   default inverted gold platinum
+))
+
+;
+{new
+   MultiSelectListPanel
+   overshell_guitar_icon_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_guitar_icon}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (default
+            {set $guitaricon G}
+            INSTICON_LEAVE
+         )
+         (inverted
+            {set $guitaricon g}
+            INSTICON_LEAVE
+         )
+         (gold
+            {set $guitaricon U}
+            INSTICON_LEAVE
+         )
+         (platinum
+            {set $guitaricon u}
+            INSTICON_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data ICON_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_instrument_icon_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_guitar_icon_screen
+   (panels overshell_guitar_icon_panel)
+   (focus overshell_guitar_icon_panel)}
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_drums_icon_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_drums_icon}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (default
+            {set $drumicon D}
+            INSTICON_LEAVE
+         )
+         (inverted
+            {set $drumicon d}
+            INSTICON_LEAVE
+         )
+         (gold
+            {set $drumicon R}
+            INSTICON_LEAVE
+         )
+         (platinum
+            {set $drumicon r}
+            INSTICON_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data ICON_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_instrument_icon_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_drums_icon_screen
+   (panels overshell_drums_icon_panel)
+   (focus overshell_drums_icon_panel)}
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_vocals_icon_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_vocals_icon}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (default
+            {set $vocalsicon V}
+            INSTICON_LEAVE
+         )
+         (inverted
+            {set $vocalsicon v}
+            INSTICON_LEAVE
+         )
+         (gold
+            {set $vocalsicon O}
+            INSTICON_LEAVE
+         )
+         (platinum
+            {set $vocalsicon o}
+            INSTICON_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data ICON_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_instrument_icon_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_vocals_icon_screen
+   (panels overshell_vocals_icon_panel)
+   (focus overshell_vocals_icon_panel)}
+;
+
+;
+{new
+   MultiSelectListPanel
+   overshell_bass_icon_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_bass_icon}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (default
+            {set $bassicon B}
+            INSTICON_LEAVE
+         )
+         (inverted
+            {set $bassicon b}
+            INSTICON_LEAVE
+         )
+         (gold
+            {set $bassicon A}
+            INSTICON_LEAVE
+         )
+         (platinum
+            {set $bassicon a}
+            INSTICON_LEAVE
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data ICON_MODIFIER_DATA})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_instrument_icon_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_bass_icon_screen
+   (panels overshell_bass_icon_panel)
+   (focus overshell_bass_icon_panel)}
+;
 
 ;
 #define GDRB_VENUES_MODIFIER_DATA

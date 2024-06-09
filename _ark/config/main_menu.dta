@@ -42,30 +42,6 @@
          manage_friends
          change_nickname)
       #endif
-      ((guitarinsticon popup)
-         deftar
-         invtar
-         gldtar
-         plattar
-         )
-      ((druminsticon popup)
-         defdrum
-         invdrum
-         glddrum
-         platdrum
-         )
-      ((vocalsinsticon popup)
-         defvox
-         invvox ;lol
-         gldvox
-         platvox
-         )
- ;     ((bassinsticon popup)
-   ;      defbass
-     ;    invbass
-       ;  gldbass
-        ; platbass
-        ; )
       )
    #ifdef MUSIC_STORE_ENABLED
    music_store

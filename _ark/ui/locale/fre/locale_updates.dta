@@ -110,45 +110,23 @@
    "Disable HUD")
 (pausecommand_cycle_freecam
    "Cycle Free Cam")
-(guitarinsticon
-   "Guitar/Bass Icon")
-(druminsticon
+(os_instrument_icon
+   "Instrument Icons")
+(os_guitar_icon
+   "Guitar Icon")
+(os_drums_icon
    "Drums Icon")
-(vocalsinsticon
+(os_vocals_icon
    "Vocals Icon")
-(bassinsticon
+(os_bass_icon
    "Bass Icon")
-(deftar
+(default
    "Default")
-(invtar
+(inverted
    "Inverted")
-(gldtar
+(gold
    "Gold")
-(plattar
-   "Platinum")
-(defdrum
-   "Default")
-(invdrum
-   "Inverted")
-(glddrum
-   "Gold")
-(platdrum
-   "Platinum")
-(defvox
-   "Default")
-(invvox
-   "Inverted")
-(gldvox
-   "Gold")
-(platvox
-   "Platinum")
-(defbass
-   "Default")
-(invbass
-   "Inverted")
-(gldbass
-   "Gold")
-(platbass
+(platinum
    "Platinum")
 (ultimenu
    "ultimenu")
@@ -157,7 +135,7 @@
 (mod_info_button
    "Mod info")
 (os_trk 
-   "Track Options")
+   "Appearance")
 (os_reset
    "Reset Appearance")
 (restart_info
@@ -262,6 +240,10 @@
    "Slot 3")
 (os_drm_smasher_4
    "Slot 4")
+(21st
+   "The Fox Theatre - Oakland")
+(os_venues "Force Venue")
+(os_outfits "Force Outfits")
 ;track settings
 (rb1 "Rock Band 1")
 (rb2 "Rock Band 2")
