@@ -357,8 +357,7 @@
       {platform_mgr disable_xmp}
       {song_offer_provider enter}
       {song.lst set_provider song_offer_provider}
-      {$this refresh_selected_song}
-      {unless {'||' {gamemode in_mode qp_coop_online} {gamemode in_mode h2h_score_duel_unranked} {gamemode in_mode h2h_score_duel_ranked} {gamemode in_mode h2h_tug_of_war_unranked} {gamemode in_mode h2h_tug_of_war_ranked}} {if $songlistpos {song.lst set_selected {- $songlistpos 1}}}})
+      {$this refresh_selected_song})
    (exit
       {mini_leaderboard.mld fade_out}
       {song_offer_provider exit}
@@ -591,7 +590,6 @@
       {song_offer_provider
          set_highlighted_ix
          {song.lst selected_pos}}
-      {set $songlistpos {song.lst selected_pos}}
       {$this refresh_selected_song})
    (skip_to_ix
       ($ix)
