@@ -12,8 +12,8 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          chmod +x dependencies/arkhelper
-          chmod +x dependencies/dtab
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
       - name: Get current commit SHA
         id: get_commit
         run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
@@ -54,8 +54,8 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          chmod +x dependencies/arkhelper
-          chmod +x dependencies/dtab
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
       - name: Get current commit SHA
         id: get_commit
         run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
@@ -96,8 +96,8 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          chmod +x dependencies/arkhelper
-          chmod +x dependencies/dtab
+          chmod +x dependencies/linux/arkhelper
+          chmod +x dependencies/linux/dtab
       - name: Get current commit SHA
         id: get_commit
         run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
