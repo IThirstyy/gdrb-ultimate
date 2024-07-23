@@ -1,0 +1,25 @@
+<wiidisc version="1">
+    <id game="R36" />
+    <options>
+        <section name="GDRB Ultimate">
+            <option name="Enable GDRB Ultimate">
+                <choice name="Enabled" default="1">
+                    <patch id="gdrbul" />
+                </choice>
+            </option>
+        </section>
+    </options>
+    <patch id="gdrbul">
+        <file disc="/gen/patch_wii.hdr" external="/gdrbul/patch_wii.hdr" create="true"></file>
+        <file disc="/gen/patch_wii_0.ark" external="/gdrbul/patch_wii_0.ark" create="true"></file>
+        <memory offset="0x80538894" value="60000000" original="4BFE29F9" />
+        <memory offset="0x805388A0" value="60000000" original="4BFE30A1" />
+        <memory offset="0x805388A8" value="60000000" original="4BFE329D" />
+        <memory offset="0x805388B8" value="60000000" original="4BFAFD05" />
+        <memory offset="0x80538940" value="60000000" original="4BFE294D" />
+        <memory offset="0x8053894C" value="60000000" original="4BFE2FF5" />
+        <memory offset="0x80538954" value="60000000" original="4BFE31F1" />
+        <memory offset="0x80538964" value="60000000" original="4BFAFC59" />
+        <memory offset="0x807CB8E0" value="00000000" original="42500000" />
+    </patch>
+</wiidisc>
