@@ -106,6 +106,14 @@
    "Skip Splash Screen: ON")
 (os_skipsplash0
    "Skip Splash Screen: OFF")
+(os_randomvenue1
+   "Random Venue: ON")
+(os_randomvenue0
+   "Random Venue: OFF")
+(os_randomoutfit1
+   "Random Outfits: ON")
+(os_randomoutfit0
+   "Random Outfits: OFF")
 (pausecommand_toggle_hud
    "Disable HUD")
 (pausecommand_cycle_freecam

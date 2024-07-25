@@ -178,6 +178,12 @@
             (bassicon
                (bassicon $bassicon)
             )
+            (randomvenue
+               (randomvenue $randomvenue)
+            )
+            (randomoutfit
+               (randomoutfit $randomoutfit)
+            )
          )
       }
    }

@@ -297,6 +297,46 @@
             {elem {find $entry bassicon} 1}
          }
       }
+      {if {== {elem $entry 0} {basename randomvenue}}
+         {set $randomvenue
+            {elem {find $entry randomvenue} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename randomoutfit}}
+         {set $randomoutfit
+            {elem {find $entry randomoutfit} 1}
+         }
+      }
    }
 )
 #endif
+#define GDBRUL_VENUE_HANDLER
+(
+   {do
+      {set $songvenue
+         {if_else
+            {exists meta_performer}
+            {meta_performer get_venue}
+            {{$this get_songpref}
+               get
+               venue}
+         }
+      }
+      {if {!= $forcevenue off}
+         {do
+            {unless {== $songvenue {'||' dookie americanidiot twentyfirst}}
+               {set $songvenue $forcevenue}
+            }
+         }
+      }
+      {if $randomvenue
+         {do
+            {unless {== $songvenue {'||' dookie americanidiot twentyfirst}}
+               {set $songvenue {elem GDRB_VENUES_MODIFIER_DATA {random_int 1 4}}}
+            }
+         }
+      }
+   }
+   $songvenue
+)
+
