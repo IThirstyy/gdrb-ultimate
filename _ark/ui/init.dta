@@ -110,6 +110,14 @@
 ;dont force venue by default
 {set $forcevenue "off"}
 
+;default outfits/insts for adv force outfit
+{set $bjoutfit dookie}
+{set $mdoutfit dookie}
+{set $tcoutfit dookie}
+{set $bjinst1 guitar_blue01}
+{set $mdisnt1 bass_lh_ricken_4001s_fireglo}
+{set $tcinst1 drum_dw}
+
 ;default gem/smasher/sustain colors
 {set $gtrgem1 gem_red.wid}
 {set $gtrhgem1 gem_red_hopo.wid}

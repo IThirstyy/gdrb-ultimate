@@ -339,4 +339,7 @@
    }
    $songvenue
 )
-
+#define GDRBUL_ADV_FORCE_OUTFITS
+(((billiejoe $bjoutfit $bjinst1)
+   (mikedirnt $mdoutfit $mdisnt1)
+   (trecool $tcoutfit $tcinst1)))

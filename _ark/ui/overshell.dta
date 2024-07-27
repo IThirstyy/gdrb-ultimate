@@ -722,18 +722,147 @@
 ;
 
 ;
-#define GDRB_OUTFITS_MODIFIER_DATA
-((off dookie americanidiot 21st hidden))
+
+{new
+   MultiSelectListPanel
+   overshell_outfits_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_basic_outfits
+            {ui push_screen overshell_basic_outfits_screen}
+         )
+         (os_adv_outfits
+            {ui push_screen overshell_adv_outfits_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (os_basic_outfits os_adv_outfits)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_trk_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_outfits_screen
+   (panels overshell_outfits_panel)
+   (focus overshell_outfits_panel)}
+   ;
+;
+
+;
+#define GDRBUL_INSTS_MODIFIER_DATA
+((none drum_ludwig drum_dw drum_leedy bass_pbass_black bass_pbass_burst bass_pbass_white guitar_6120 guitar_rh_gibson_j200 guitar_blue01 guitar_blue02 guitar_blue03 guitar_everly bass_g3 guitar_lp_burst guitar_lp_white guitar_lp_yellow guitar_es335 bass_lh_fender_jazz_sunburst bass_lh_hofner61_pick bass_lh_hofner63_nopick bass_lh_hofner63_pick bass_lh_ricken_4001s_fireglo bass_lh_ricken_4001s_painted bass_lh_ricken_4001s_stripped guitar_lh_epi_casino_sunburst guitar_lh_epi_texan guitar_lh_fender_esquire_sunburst guitar_rh_epi65casino_burst guitar_rh_epi65casino_strip guitar_rh_epi_casino_sunburst_nopick guitar_rh_fender69tele guitar_rh_fender_strat_blue guitar_rh_fender_strat_rocky guitar_rh_fender_vi_sunburst guitar_rh_framus_12 guitar_rh_gibson62j160 guitar_rh_gibson_es345 guitar_rh_gibson_j160e_paint guitar_rh_gibson_j160e_stripped guitar_rh_gibson_j200 guitar_rh_gibson_lespaul_red guitar_rh_gibson_sg_cherry guitar_rh_gretsch57duo guitar_rh_gretsch62chet guitar_rh_gretsch63tenn guitar_rh_martin_d28 guitar_rh_ramirez_classical guitar_rh_ricken360_12 guitar_rh_ricken360_12_fireglo guitar_rh_ricken64_325 guitar_rh_ricken_325bigsby guitar_rh_ricken_325bigsbyblack guitar_rh_ricken_325_1996_fireglo guitar_rh_ricken_425_black drum_budokan drum_cavern drum_dream01 drum_dream02 drum_dream03 drum_dream04 drum_rooftop drum_shea drum_sullivan drum_pepper sitar))
+{new
+   MultiSelectListPanel
+   overshell_adv_outfits_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_adv_outfits1
+            {set $advforceoutfit {! $advforceoutfit}}
+            {set $forceoutfit off}
+            {$this lst_reset}
+         )
+         (os_adv_outfits0
+            {set $advforceoutfit {! $advforceoutfit}}
+            {set $forceoutfit off}
+            {$this lst_reset}
+         )
+         (os_billiejoe
+            {ui push_screen overshell_billiejoe_screen}
+         )
+         (os_mikedirnt
+            {ui push_screen overshell_mikedirnt_screen}
+         )
+         (os_trecool
+            {ui push_screen overshell_trecool_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data ({if_else $advforceoutfit os_adv_outfits1 os_adv_outfits0} os_billiejoe os_mikedirnt os_trecool)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_outfits_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_adv_outfits_screen
+   (panels overshell_adv_outfits_panel)
+   (focus overshell_adv_outfits_panel)}
+   ;
+;
+
+;
+
+{new
+   MultiSelectListPanel
+   overshell_billiejoe_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_outfits
+            {ui push_screen overshell_billiejoe_outfits_screen}
+         )
+         (os_insts
+            {ui push_screen overshell_billiejoe_insts_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (os_outfits os_insts)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_adv_outfits_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_billiejoe_screen
+   (panels overshell_billiejoe_panel)
+   (focus overshell_billiejoe_panel)}
+   ;
+;
+
+;
 {new
     MultiSelectListPanel
-    overshell_outfits_panel
+    overshell_billiejoe_outfits_panel
     OVERSHELL_LIST_FILE
     (enter
-        {sel_section.lst set_data GDRB_OUTFITS_MODIFIER_DATA}
+        {sel_section.lst set_data (dookie americanidiot 21st hidden)}
         {title.lbl set text_token {localize os_outfits}})
     (exit)
     (SELECT_MSG
-      {set $forceoutfit {$component selected_sym}}
+      {set $bjoutfit {$component selected_sym}}
       {ui goto_screen overshell_trk_screen}
       {ui pop_screen}
     )
@@ -746,16 +875,307 @@
     (BUTTON_DOWN_MSG
         {if
         {== $action kAction_Cancel}
-         {ui goto_screen overshell_trk_screen}
+         {ui goto_screen overshell_billiejoe_screen}
          {ui pop_screen}}
          kDataUnhandled)
     (TRANSITION_COMPLETE_MSG
         {$this update_helpbar})}
 {new
    UIScreen
-   overshell_outfits_screen
-   (panels overshell_outfits_panel)
-   (focus overshell_outfits_panel)}
+   overshell_billiejoe_outfits_screen
+   (panels overshell_billiejoe_outfits_panel)
+   (focus overshell_billiejoe_outfits_panel)}
+;
+
+;
+{new
+    MultiSelectListPanel
+    overshell_billiejoe_insts_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRBUL_INSTS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $bjinst1 {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_billiejoe_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_billiejoe_insts_screen
+   (panels overshell_billiejoe_insts_panel)
+   (focus overshell_billiejoe_insts_panel)}
+;
+
+;
+
+{new
+   MultiSelectListPanel
+   overshell_mikedirnt_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_outfits
+            {ui push_screen overshell_mikedirnt_outfits_screen}
+         )
+         (os_insts
+            {ui push_screen overshell_mikedirnt_insts_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (os_outfits os_insts)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_adv_outfits_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_mikedirnt_screen
+   (panels overshell_mikedirnt_panel)
+   (focus overshell_mikedirnt_panel)}
+   ;
+;
+
+;
+{new
+    MultiSelectListPanel
+    overshell_mikedirnt_outfits_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data (dookie americanidiot 21st hidden)}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $mdoutfit {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_mikedirnt_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_mikedirnt_outfits_screen
+   (panels overshell_mikedirnt_outfits_panel)
+   (focus overshell_mikedirnt_outfits_panel)}
+;
+
+;
+{new
+    MultiSelectListPanel
+    overshell_mikedirnt_insts_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRBUL_INSTS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $mdisnt1 {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_mikedirnt_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_mikedirnt_insts_screen
+   (panels overshell_mikedirnt_insts_panel)
+   (focus overshell_mikedirnt_insts_panel)}
+;
+
+;
+
+{new
+   MultiSelectListPanel
+   overshell_trecool_panel
+   OVERSHELL_LIST_FILE
+   (enter
+      {$this lst_reset}
+      {title.lbl set text_token {localize os_gems_colors}}
+      {$this pause_if_local})
+   (exit)
+   (SELECT_MSG
+      {switch {$component selected_sym}
+         (os_outfits
+            {ui push_screen overshell_trecool_outfits_screen}
+         )
+         (os_insts
+            {ui push_screen overshell_trecool_insts_screen}
+         )
+      }
+   )
+   (lst_reset
+      {sel_section.lst set_data (os_outfits os_insts)})
+   (SCROLL_MSG)
+   (BUTTON_DOWN_MSG
+      {if {== $action kAction_Cancel}
+         {ui goto_screen overshell_adv_outfits_screen}
+         {ui pop_screen}
+      }
+      kDataUnhandled
+      )}
+{new
+   UIScreen
+   overshell_trecool_screen
+   (panels overshell_trecool_panel)
+   (focus overshell_trecool_panel)}
+   ;
+;
+
+;
+{new
+    MultiSelectListPanel
+    overshell_trecool_outfits_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data (dookie americanidiot 21st hidden)}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $tcoutfit {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trecool_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_trecool_outfits_screen
+   (panels overshell_trecool_outfits_panel)
+   (focus overshell_trecool_outfits_panel)}
+;
+
+;
+{new
+    MultiSelectListPanel
+    overshell_trecool_insts_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRBUL_INSTS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $tcinst1 {$component selected_sym}}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_trecool_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_trecool_insts_screen
+   (panels overshell_trecool_insts_panel)
+   (focus overshell_trecool_insts_panel)}
+;
+
+;
+#define GDRB_OUTFITS_MODIFIER_DATA
+((off dookie americanidiot 21st hidden))
+{new
+    MultiSelectListPanel
+    overshell_basic_outfits_panel
+    OVERSHELL_LIST_FILE
+    (enter
+        {sel_section.lst set_data GDRB_OUTFITS_MODIFIER_DATA}
+        {title.lbl set text_token {localize os_outfits}})
+    (exit)
+    (SELECT_MSG
+      {set $forceoutfit {$component selected_sym}}
+      {set $advforceoutfit false}
+      {ui goto_screen overshell_trk_screen}
+      {ui pop_screen}
+    )
+    (update_helpbar
+            {helpbar
+                set_config
+                ((cancel helpbar_back)
+                    (confirm helpbar_select))})
+    (SCROLL_MSG)
+    (BUTTON_DOWN_MSG
+        {if
+        {== $action kAction_Cancel}
+         {ui goto_screen overshell_outfits_screen}
+         {ui pop_screen}}
+         kDataUnhandled)
+    (TRANSITION_COMPLETE_MSG
+        {$this update_helpbar})}
+{new
+   UIScreen
+   overshell_basic_outfits_screen
+   (panels overshell_basic_outfits_panel)
+   (focus overshell_basic_outfits_panel)}
 ;
 
 #define GEMC_MODIFIER_DATA ; dta make me cry why is dta dta
