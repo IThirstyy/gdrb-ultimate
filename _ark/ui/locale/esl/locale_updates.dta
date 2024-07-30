@@ -70,30 +70,20 @@
    "Pause Background Graphics: ON")
 (os_disablegfx0
    "Pause Background Graphics: OFF")
-(os_forcewhv0
-   "Force Warehouse Venue: OFF")
-(os_forcewhv1
-   "Force Warehouse Venue: ON")
-(os_forcemkv0
-   "Force Milton Keynes Venue: OFF")
-(os_forcemkv1
-   "Force Milton Keynes Venue: ON")
-(os_forceftv0
-   "Force Fox Theatre Venue: OFF")
-(os_forceftv1
-   "Force Fox Theatre Venue: ON")
-(os_forcedko0
-   "Force Dookie Outfit: OFF")
-(os_forcedko1
-   "Force Dookie Outfit: ON")
-(os_forceaio0
-   "Force Amercian Idiot Outfit: OFF")
-(os_forceaio1
-   "Force Amercian Idiot Outfit: ON")
-(os_force21sto0
-   "Force 21st Outfit: OFF")
-(os_force21sto1
-   "Force 21st Outfit: ON")
+(os_adv_outfits1
+   "Force Outfits: ON")
+(os_adv_outfits0
+   "Force Outfits: OFF")
+(os_outfit
+   "Force Outfit")
+(os_inst
+   "Force Instrument")
+(os_billiejoe
+   "Billie Joe")
+(os_mikedirnt
+   "Mike Dirnt")
+(os_trecool
+   "Tre Cool")
 (os_60fps0
    "Venue FPS: 30")
 (os_60fps1

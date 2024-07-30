@@ -105,7 +105,7 @@
 {set $skipsplash FALSE}
 
 ;dont force outfit by default
-{set $forceoutfit "off"}
+{set $advforceoutfit FALSE}
 
 ;dont force venue by default
 {set $forcevenue "off"}
@@ -115,7 +115,7 @@
 {set $mdoutfit dookie}
 {set $tcoutfit dookie}
 {set $bjinst1 guitar_blue01}
-{set $mdisnt1 bass_lh_ricken_4001s_fireglo}
+{set $mdinst1 bass_lh_ricken_4001s_fireglo}
 {set $tcinst1 drum_dw}
 
 ;default gem/smasher/sustain colors

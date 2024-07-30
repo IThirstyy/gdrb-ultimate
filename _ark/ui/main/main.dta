@@ -43,8 +43,23 @@
             (paddrum
                (paddrum $paddrum)
             )
-            (forceoutfit
-               (forceoutfit $forceoutfit)
+            (billie_joe_outfit
+               (billie_joe_outfit $bjoutfit)
+            )
+            (mike_dirnt_outfit
+               (mike_dirnt_outfit $mdoutfit)
+            )
+            (tre_cool_outfit
+               (tre_cool_outfit $tcoutfit)
+            )
+            (billie_joe_instrument
+               (billie_joe_instrument $bjinst1)
+            )
+            (mike_dirnt_instrument
+               (mike_dirnt_instrument $mdinst1)
+            )
+            (tre_cool_instrument
+               (tre_cool_instrument $tcinst1)
             )
             (forcevenue
                (forcevenue $forcevenue)

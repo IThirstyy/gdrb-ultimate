@@ -72,9 +72,34 @@
             {elem {find $entry paddrum} 1}
          }
       }
-      {if {== {elem $entry 0} {basename forceoutfit}}
-         {set $forceoutfit
-            {elem {find $entry forceoutfit} 1}
+      {if {== {elem $entry 0} {basename billie_joe_outfit}}
+         {set $bjoutfit
+            {elem {find $entry billie_joe_outfit} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mike_dirnt_outfit}}
+         {set $mdoutfit
+            {elem {find $entry mike_dirnt_outfit} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename tre_cool_outfit}}
+         {set $tcoutfit
+            {elem {find $entry tre_cool_outfit} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename billie_joe_instrument}}
+         {set $bjinst1
+            {elem {find $entry billie_joe_instrument} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename mike_dirnt_instrument}}
+         {set $mdinst1
+            {elem {find $entry mike_dirnt_instrument} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename tre_cool_instrument}}
+         {set $tcinst1
+            {elem {find $entry tre_cool_instrument} 1}
          }
       }
       {if {== {elem $entry 0} {basename forcevenue}}
@@ -341,5 +366,5 @@
 )
 #define GDRBUL_ADV_FORCE_OUTFITS
 (((billiejoe $bjoutfit $bjinst1)
-   (mikedirnt $mdoutfit $mdisnt1)
+   (mikedirnt $mdoutfit $mdinst1)
    (trecool $tcoutfit $tcinst1)))
