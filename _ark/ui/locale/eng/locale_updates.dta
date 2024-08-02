@@ -291,3 +291,7 @@
    "ENABLE FIXME")
 (temp2
    "DISABLE FIXME")
+#ifndef HX_WII
+(mic_sensitivity_save_warning
+   " ")
+#endif

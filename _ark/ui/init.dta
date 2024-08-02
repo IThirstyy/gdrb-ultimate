@@ -149,6 +149,10 @@
 {set $drms3 blue}
 {set $drms4 green}
 
+;default mic gains
+{set $mic_gain_1 4}
+{set $mic_gain_2 4}
+{set $mic_gain_3 4}
 
 ;gem texture
 {set $gem "none"}
@@ -249,3 +253,9 @@
       {set $track_z_pos 36}
       {set $track_fade_start 15}
       {set $track_fade_length 45}}
+
+{profile_mgr set_mic_gain 0 $mic_gain_1} {profile_mgr update_mic_gain 0}
+
+{profile_mgr set_mic_gain 1 $mic_gain_2} {profile_mgr update_mic_gain 1}
+
+{profile_mgr set_mic_gain 2 $mic_gain_3} {profile_mgr update_mic_gain 2}

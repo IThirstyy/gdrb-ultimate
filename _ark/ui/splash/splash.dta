@@ -283,6 +283,7 @@
    (helpbar
       ((confirm helpbar_continue)))
    (enter
+      {profile_mgr set_overscan TRUE}
       {dialog_panel set_custom calibration_notice go_to_calibration skip_calibration opt1.btn}
       {platform_mgr
          add_sink
@@ -296,7 +297,7 @@
       {startup_sdmode_begin_dialog set final_screen meta_loading_splash_to_main_menu}
       {ui goto_screen startup_sdmode_begin_dialog}
       #else
-      {ui goto_screen meta_loading_splash_to_main_menu}
+      {ui goto_screen main_popup_swapper}
       #endif)
    (SELECT_MSG
       {switch
@@ -310,7 +311,7 @@
             {startup_sdmode_begin_dialog set final_screen meta_loading_splash_to_main_menu}
             {ui goto_screen startup_sdmode_begin_dialog}
             #else
-            {ui goto_screen meta_loading_splash_to_main_menu}
+            {ui goto_screen main_popup_swapper}
             #endif)})}
 {new
    BandScreen
