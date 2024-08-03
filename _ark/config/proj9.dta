@@ -1,4 +1,25 @@
 #include macros.dta
+#autorun ;getting this to work was a miracle (man) as i tried like 1000 different things and was about to give up before i thought about writing a file here anyways redo formatting at some point
+({unless {file_exists 
+  #ifdef HX_XBOX 
+    "GAME:/ulti_dlc.dta" 
+  #endif 
+  #ifdef HX_PS3 
+    "GD:/dev_hdd0/game/BLUS30050/USRDIR/ulti_dlc_gd.dta" 
+  #endif
+} {write_file 
+  #ifdef HX_XBOX 
+    "GAME:/ulti_dlc.dta" 
+  #endif 
+  #ifdef HX_PS3 
+    "GD:/dev_hdd0/game/BLUS30050/USRDIR/ulti_dlc_gd.dta" 
+  #endif
+  {array
+    (
+        kDataUnhandled
+    )
+  }
+}})
 (version
    #include proj9_version.dta)
 (mem

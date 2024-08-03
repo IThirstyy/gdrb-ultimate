@@ -1,4 +1,6 @@
 #ifndef HX_WII
+#ifdef HX_XBOX #include GAME:/ulti_dlc.dta #endif
+#ifdef HX_PS3 #include GD:/dev_hdd0/game/BLUS30050/USRDIR/ulti_dlc_gd.dta #endif
 (21guns
    (name
       "21 Guns")
